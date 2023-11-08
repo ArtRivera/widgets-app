@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widgets_app/presentation/buttons/buttons_view.dart';
 
 class _MenuItem {
@@ -46,8 +47,7 @@ class MenuItemTile extends StatelessWidget {
         title: Text(menuItem.title),
         subtitle: Text(menuItem.subtitle),
         onTap: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (_) => const ButtonsView()));
+          context.push(menuItem.route);
         });
   }
 }
