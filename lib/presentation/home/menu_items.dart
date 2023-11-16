@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:widgets_app/presentation/buttons/buttons_view.dart';
+import 'package:widgets_app/config/router/app_router.dart';
 
 class _MenuItem {
-  const _MenuItem({
+  _MenuItem({
     required this.title,
     required this.subtitle,
     required this.route,
@@ -16,19 +16,25 @@ class _MenuItem {
   final IconData icon;
 }
 
-const appMenuItems = [
+final appMenuItems = [
   _MenuItem(
     title: 'Buttons',
     subtitle: 'All kinds of buttons',
-    route: '/buttons',
+    route: Routes.buttons.name,
     icon: Icons.smart_button,
   ),
   _MenuItem(
     title: 'Cards',
     subtitle: 'All kinds of cards',
-    route: '/cards',
+    route: Routes.cards.name,
     icon: Icons.credit_card,
-  )
+  ),
+  _MenuItem(
+    title: 'Progress indicators',
+    subtitle: 'Check the progress indicators',
+    route: Routes.progress.name,
+    icon: Icons.refresh,
+  ),
 ];
 
 class MenuItemTile extends StatelessWidget {
@@ -47,7 +53,7 @@ class MenuItemTile extends StatelessWidget {
         title: Text(menuItem.title),
         subtitle: Text(menuItem.subtitle),
         onTap: () {
-          context.push(menuItem.route);
+          context.pushNamed(menuItem.route);
         });
   }
 }
