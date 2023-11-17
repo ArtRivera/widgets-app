@@ -6,6 +6,7 @@ enum Routes {
   buttons,
   cards,
   progress,
+  snackbar,
 }
 
 final class RoutePaths {
@@ -13,6 +14,7 @@ final class RoutePaths {
   static const String buttons = '/buttons';
   static const String cards = '/cards';
   static const String progress = '/progress';
+  static const String snackbar = '/snackbar';
 }
 
 // GoRouter configuration
@@ -38,6 +40,11 @@ final router = GoRouter(
       path: RoutePaths.progress,
       name: Routes.progress.name,
       builder: (context, state) => const ProgressView(),
+    ),
+    GoRoute(
+      path: RoutePaths.snackbar,
+      name: Routes.snackbar.name,
+      builder: (context, state) => const SnackbarView(),
     ),
   ],
 );

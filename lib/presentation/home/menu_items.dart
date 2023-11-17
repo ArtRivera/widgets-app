@@ -35,6 +35,12 @@ final appMenuItems = [
     route: Routes.progress.name,
     icon: Icons.refresh,
   ),
+  _MenuItem(
+    title: 'Snackbars and dialogs',
+    subtitle: 'Check the snackbars and dialogs',
+    route: Routes.snackbar.name,
+    icon: Icons.notification_important,
+  ),
 ];
 
 class MenuItemTile extends StatelessWidget {
