@@ -41,6 +41,12 @@ final appMenuItems = [
     route: Routes.snackbar.name,
     icon: Icons.notification_important,
   ),
+  _MenuItem(
+    title: 'Animated container',
+    subtitle: 'Check the animated container',
+    route: Routes.animatedContainer.name,
+    icon: Icons.animation,
+  ),
 ];
 
 class MenuItemTile extends StatelessWidget {
