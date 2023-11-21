@@ -53,6 +53,12 @@ final appMenuItems = [
     route: Routes.uiControls.name,
     icon: Icons.check_box,
   ),
+  _MenuItem(
+    title: 'App Tutorial',
+    subtitle: 'Check the App Tutorial',
+    route: Routes.tutorial.name,
+    icon: Icons.turn_left_outlined,
+  ),
 ];
 
 class MenuItemTile extends StatelessWidget {
