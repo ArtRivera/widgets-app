@@ -47,6 +47,12 @@ final appMenuItems = [
     route: Routes.animatedContainer.name,
     icon: Icons.animation,
   ),
+  _MenuItem(
+    title: 'UI controls',
+    subtitle: 'Check the UI controls',
+    route: Routes.uiControls.name,
+    icon: Icons.check_box,
+  ),
 ];
 
 class MenuItemTile extends StatelessWidget {
