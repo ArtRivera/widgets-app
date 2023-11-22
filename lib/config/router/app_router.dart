@@ -10,6 +10,7 @@ enum Routes {
   animatedContainer,
   uiControls,
   tutorial,
+  infiniteScroll,
 }
 
 final class RoutePaths {
@@ -21,6 +22,7 @@ final class RoutePaths {
   static const String animatedContainer = '/animated-container';
   static const String uiControls = '/ui-controls';
   static const String tutorial = '/tutorial';
+  static const String infiniteScroll = '/infinite-scroll';
 }
 
 // GoRouter configuration
@@ -66,6 +68,11 @@ final router = GoRouter(
       path: RoutePaths.tutorial,
       name: Routes.tutorial.name,
       builder: (context, state) => const AppTutorialView(),
+    ),
+    GoRoute(
+      path: RoutePaths.infiniteScroll,
+      name: Routes.infiniteScroll.name,
+      builder: (context, state) => const InfiniteScrollView(),
     ),
   ],
 );

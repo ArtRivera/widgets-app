@@ -59,6 +59,12 @@ final appMenuItems = [
     route: Routes.tutorial.name,
     icon: Icons.turn_left_outlined,
   ),
+  _MenuItem(
+    title: 'Infinite Scroll',
+    subtitle: 'Check the infinite scrolling',
+    route: Routes.infiniteScroll.name,
+    icon: Icons.swipe_down,
+  ),
 ];
 
 class MenuItemTile extends StatelessWidget {
