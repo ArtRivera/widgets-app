@@ -1,4 +1,6 @@
 import 'package:go_router/go_router.dart';
+import 'package:widgets_app/presentation/counter/counter.dart';
+import 'package:widgets_app/presentation/theme_picker/theme_picker_view.dart';
 import 'package:widgets_app/presentation/views.dart';
 
 enum Routes {
@@ -11,6 +13,8 @@ enum Routes {
   uiControls,
   tutorial,
   infiniteScroll,
+  counter,
+  themePicker,
 }
 
 final class RoutePaths {
@@ -23,6 +27,8 @@ final class RoutePaths {
   static const String uiControls = '/ui-controls';
   static const String tutorial = '/tutorial';
   static const String infiniteScroll = '/infinite-scroll';
+  static const String counter = '/counter';
+  static const String themePicker = '/theme-picker';
 }
 
 // GoRouter configuration
@@ -73,6 +79,16 @@ final router = GoRouter(
       path: RoutePaths.infiniteScroll,
       name: Routes.infiniteScroll.name,
       builder: (context, state) => const InfiniteScrollView(),
+    ),
+    GoRoute(
+      path: RoutePaths.counter,
+      name: Routes.counter.name,
+      builder: (context, state) => const CounterView(),
+    ),
+    GoRoute(
+      path: RoutePaths.themePicker,
+      name: Routes.themePicker.name,
+      builder: (context, state) => const ThemePickerView(),
     ),
   ],
 );
