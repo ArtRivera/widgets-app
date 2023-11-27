@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:widgets_app/config/theme/app_theme_controller.dart';
 import 'package:widgets_app/presentation/counter/counter_provider.dart';
-import 'package:widgets_app/presentation/theme_picker/theme_provider.dart';
 
 class CounterView extends ConsumerWidget {
   const CounterView({super.key});
@@ -9,16 +9,17 @@ class CounterView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final _counter = ref.watch(counterProvider);
-    final isDarkTheme = ref.watch(isDarkThemeProvider);
+
+    final appTheme = ref.watch(appThemeProvider);
 
     return Scaffold(
       appBar: AppBar(title: const Text('Counter'), actions: [
         IconButton(
-            icon: Icon(isDarkTheme
+            icon: Icon(appTheme.isDarkTheme
                 ? (Icons.brightness_7)
                 : Icons.brightness_2_outlined),
             onPressed: () {
-              ref.read(isDarkThemeProvider.notifier).update((state) => !state);
+              ref.read(appThemeProvider.notifier).toggleTheme();
             })
       ]),
       body: Center(
